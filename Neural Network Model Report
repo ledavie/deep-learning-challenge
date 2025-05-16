@@ -1,0 +1,73 @@
+Neural Network Model Report: Alphabet Soup Charity
+Overview of the Analysis
+The goal of this analysis was to build a binary classification model using deep learning to help Alphabet Soup, a nonprofit organization, determine which charitable funding applications are most likely to be successful. By analyzing historical data on past funding applications, the model aims to improve decision-making by identifying key patterns and factors associated with successful outcomes.
+
+Results
+Data Preprocessing
+Target Variable:
+
+IS_SUCCESSFUL – This binary variable indicates whether a charity application was successful (1) or not (0).
+
+Feature Variables:
+
+All other variables in the dataset that contain useful information for prediction, including numerical and encoded categorical data (e.g., APPLICATION_TYPE, AFFILIATION, INCOME_AMT, CLASSIFICATION, etc.).
+
+Removed Variables:
+
+EIN – Employer Identification Number is a unique identifier and not relevant for prediction.
+
+NAME – Organization names do not provide predictive value and could introduce noise.
+
+Compiling, Training, and Evaluating the Model
+Initial Model Architecture:
+
+Input Layer: Number of input neurons matched the number of features (after encoding).
+
+Hidden Layers:
+
+Layer 1: 80 neurons, ReLU activation
+
+Layer 2: 30 neurons, ReLU activation
+
+Output Layer: 1 neuron with sigmoid activation (for binary classification)
+
+Activation Functions:
+
+ReLU for hidden layers (to avoid vanishing gradients)
+
+Sigmoid for output (to produce probability between 0 and 1)
+
+Model Performance:
+
+Achieved accuracy: ~72% (may vary slightly depending on the final training run).
+
+Target performance: 75% accuracy or higher – The model did not reach this threshold.
+
+Optimization Steps Taken:
+
+Added an additional hidden layer.
+
+Increased and decreased the number of neurons per layer.
+
+Implemented dropout layers to prevent overfitting.
+
+Experimented with different batch sizes and epoch counts (e.g., 50, 75, 100).
+
+Attempted feature selection to reduce dimensionality and improve signal-to-noise ratio.
+
+Summary
+The deep learning model built for Alphabet Soup was moderately successful, achieving an accuracy of approximately 72%. Despite efforts to optimize the architecture and training process, the model did not reach the target threshold of 75% accuracy.
+
+Recommendation
+To improve model performance, we recommend trying ensemble learning methods such as:
+
+Random Forest Classifier or XGBoost:
+
+These models are often more effective with tabular data than deep learning models.
+
+They handle categorical variables and feature importance more intuitively.
+
+They are generally easier to tune and interpret for structured data.
+
+Using these models, combined with rigorous feature engineering and cross-validation, may yield better accuracy and generalization for this binary classification problem.
+
